@@ -1,0 +1,35 @@
+<div>
+  <h2 class="text-xl mb-1 font-semibold text-blue-500">Choose your country</h2>
+  <div class="mb-4 text-gray-500 leading-4">
+    <p>You are currently viewing our <strong>United Kingdom</strong> website.</p>
+  </div>
+  <ul>
+    <li class="mb-2">
+      <button
+        @click="country = 'es'"
+        class="flex items-center group"
+      >
+        <img class="h-6 w-6 rounded-full" src="/images/flags/es.svg" />
+        <span class="font-medium group-focus:text-blue-500 group-hover:text-blue-500 transition-colors duration-150 ease-in-out ml-2 leading-6">España (Español)</span>
+      </button>
+    </li>
+    <li class="mb-2">
+      <button
+        @click="country = 'ie'"
+        class="flex items-center group"
+      >
+        <img class="h-6 w-6 rounded-full" src="/images/flags/ie.svg" />
+        <span class="font-medium group-focus:text-blue-500 group-hover:text-blue-500 transition-colors duration-150 ease-in-out ml-2 leading-6">Ireland (English)</span>
+      </button>
+    </li>
+    <li>
+      <button
+        @click="country = 'gb'"
+        class="flex items-center group"
+      >
+        <img class="h-6 w-6 rounded-full" src="/images/flags/gb.svg" />
+        <span class="font-medium group-focus:text-blue-500 group-hover:text-blue-500 transition-colors duration-150 ease-in-out ml-2 leading-6">United Kingdom (English)</span>
+      </button>
+    </li>
+  </ul>
+</div>

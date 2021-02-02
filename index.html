@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en" x-data="{ country: 'gb', method: 'post', countrySelectorOpen: false }">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/atom-one-dark-reasonable.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
+    <script src="/js/cookies.min.js"></script>
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+    <style>
+      a, button { display:inline-flex; }
+      x-cloak { display: none; }
+    </style>
+  </head>
+  <body class="antialiased font-sans text-gray-900 h-full w-full bg-gray-100 flex flex-col">
+    <header class="flex-shrink-0">
+      <nav class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto py-4 flex flex-col sm:flex-row justify-between items-center">
+        <a href="/">
+          <img class="h-20 mb-4 sm:mb-0" src="/images/logo.svg" alt="imimobile's logo">
+        </a>
+        <ul class="flex text-sm items-center">
+          <li class="mr-4">
+            <a class="flex items-center font-medium text-gray-500 focus:text-blue-700 hover:text-blue-700 transition-colors ease-in-out duration-150" href="#">
+              <span class="mr-1 leading-4"><span x-show="country === 'gb' || country === 'ie'">Login</span><span x-cloak x-show="country === 'es'">Entrar</span></span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a class="font-bold rounded-full py-4 px-6 text-white transition-colors ease-in-out duration-150 bg-yellow-500 cursor-pointer hover:bg-yellow-600 focus:bg-yellow-600" href="#"><span x-show="country === 'gb' || country === 'ie'">Register</span><span x-cloak x-show="country === 'es'">Registrarse</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex-shrink-0 flex-grow">
+      <section class="bg-cover bg-center no-repeat py-20" style="background-image: url('/images/hero.jpg');">
+        <div class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+          <h1 class="font-semibold text-4xl mb-4 text-white"><span x-show="country === 'gb' || country === 'ie'">Connect your application with our SMS API</span><span x-cloak x-show="country === 'es'">SMS API para una integraci&oacute;n total</span></span></h1>
+          <div class="max-w-xl text-gray-300 leading-6 font-medium">
+            <p x-show="country === 'gb' || country === 'ie'">We've helped thousands of companies connect their core business systems with <span x-show="country === 'gb'">the United Kingdom</span><span x-show="country === 'ie'">Ireland</span>'s leading SMS platform.</p>
+            <p x-cloak x-show="country === 'es'">Integra la plataforma de Textlocal con tu software preferido gracias a nuestra SMS API. Una herramienta escalable, potente y sencilla creada para hacerte la vida m&aacute;s f&aacute;cil.</p>
+          </div>
+          <div class="mt-10">
+            <ul class="flex flex-col sm:flex-row text-sm items-center">
+              <li>
+                <a class="font-bold rounded-full py-4 px-6 text-white transition-colors ease-in-out duration-150 bg-yellow-500 cursor-pointer hover:bg-yellow-600 focus:bg-yellow-600 mb-4 sm:mb-0" href="#"><span x-show="country === 'gb' || country === 'ie'">Create an account today</span><span x-show="country === 'es'">Quiero probar vuestra SMS API</span></a>
+              </li>
+              <li class="ml-4">
+                <a class="flex items-center font-medium text-gray-300 focus:text-white hover:text-white transition-colors ease-in-out duration-150" href="#">
+                  <span class="mr-1 leading-4"><span x-show="country === 'gb' || country === 'ie'">Read our API docs</span><span x-cloak x-show="country === 'es'"><span x-show="country === 'es'">Quiero probar vuestra SMS API</span></span></span>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <article class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto py-10">
+        <!-- Code goes here -->
+      </article>
+    </main>
+    <footer class="flex-shrink-0 py-8 bg-gray-200 text-xs">
+      <div class="relative px-4 md:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+        <div class="text-center sm:text-left">
+          <p class="text-gray-700 mb-2">Copyright &copy; 2005 – 2021 Txtlocal Ltd &vert; <span x-show="country === 'gb' || country === 'ie'">All Rights Reserved</span><span x-cloak x-show="country === 'es'">Todos los Derechos Reservados</span></p>
+          <p><a class="text-gray-700 hover:text-blue-500 focus:text-blue-500 border-b border-gray-500 focus:border-blue-500 hover:border-blue-500 transition-colorsduration-150 ease-in-out" href="#">Legal</a> &vert; <a class="text-gray-700 hover:text-blue-500 focus:text-blue-500 border-b border-gray-500 focus:border-blue-500 hover:border-blue-500 transition-colors duration-150 ease-in-out" href="#"><span x-show="country === 'gb' || country === 'ie'">Privacy Policy</span><span x-cloak x-show="country === 'es'">Política de Privacidad</span></a> &vert; <a class="text-gray-700 hover:text-blue-500 focus:text-blue-500 border-b border-gray-500 focus:border-blue-500 hover:border-blue-500 transition-colors duration-150 ease-in-out" href="#">Terms</a> &vert; <a class="text-gray-700 hover:text-blue-500 focus:text-blue-500 border-b border-gray-500 focus:border-blue-500 hover:border-blue-500 transition-colors duration-150 ease-in-out" href="#">Cookies</a></p>
+        </div>
+        <button
+          @mouseenter.once="
+            fetch('/partials/country-selector.html')
+              .then(response => response.text())
+              .then(html => { $refs.countrySelector.innerHTML = html })
+          "
+          @click="countrySelectorOpen = true"
+          class="focus:outline-none focus:border-blue-500 flex border-2 rounded-full border-gray-300 py-2 px-4 bg-white mt-4 sm:mt-0"
+        >
+          <img x-show="country === 'gb'" class="h-6 w-6 rounded-full" src="/images/flags/gb.svg" />
+          <img x-cloak x-show="country === 'ie'" class="h-6 w-6 rounded-full" src="/images/flags/ie.svg" />
+          <img x-cloak x-show="country === 'es'" class="h-6 w-6 rounded-full" src="/images/flags/es.svg" />          
+          <span class="ml-2 leading-6 font-semibold text-gray-700"><span x-show="country === 'gb' || country === 'ie'">Country selector</span><span x-cloak x-show="country === 'es'">Selector de pais</span></span>
+        </button>
+        <div
+          x-ref="countrySelector"
+          x-show="countrySelectorOpen"
+          @click.away="countrySelectorOpen = false"
+          class="absolute right-0 bottom-0 sm:mr-4 md:mr-6 lg:mr-8 bg-white sm:max-w-xs w-full px-4 py-4 mb-12 rounded-lg shadow-lg"
+        >
+          <p>Loading...</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-clipboard@1.x.x/dist/alpine-clipboard.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

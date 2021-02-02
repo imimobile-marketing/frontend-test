@@ -1,0 +1,21 @@
+<pre><code class="language-php px-6 py-8 rounded-lg">&lt;?php
+  // Account details
+  $apiKey = urlencode('Your apiKey');
+  
+  // Message details
+  $numbers = urlencode('<span x-show="country === 'gb'">447123456789, 447987654321</span><span x-show="country === 'ie'">35312345678, 35398765432</span><span x-show="country === 'es'">34987654321</span>');
+  $sender = urlencode('<span x-show="country === 'gb'">Jims Auto</span><span x-show="country === 'ie'">Kilkenny Glass</span><span x-show="country === 'es'">Supermercado Alme&iacute;ra</span>');
+  $message = rawurlencode('<span x-show="country === 'gb'">Your car is due for its MOT on Jan 30th. Please book in ASAP</span><span x-show="country === 'ie'">Your window fitting appointment is scheduled for 4pm with Colm</span><span x-show="country === 'es'">Javier entregar&aacute; tus compras a las 13:00 horas de hoy</span>.');
+
+  // Prepare data for POST request
+  $data = 'apikey=' . $apiKey . '&amp;numbers=' . $numbers . &quot;&amp;sender=&quot; . $sender . &quot;&amp;message=&quot; . $message;
+
+  // Send the GET request with cURL
+  $ch = curl_init('https://api.txtlocal.com/send/?' . $data);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $response = curl_exec($ch);
+  curl_close($ch);
+  
+  // Process your response here
+  echo $response;
+?&gt;</code></pre>

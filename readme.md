@@ -3,23 +3,38 @@
 Thank you for agreeing to take part in the imimobile front end developer practical assessment.
 
 ## The brief
-You have been asked to build the following component. This will test the following skills.
+This exercise will test the following skills.
 
 * Your eye for detail and accuracy
 * Your ability to learn to work with tools you've never likely worked with before.
 * HTML
 * Utility CSS
 * Your understanding of the basics of JavaScript (types, syntax, operators, etc)
+* Your knowledge of version control
+
+### What you need to do
+
+Please refer to the Figma file you can find here: <a href="https://www.figma.com/file/tHoMhTvo5aFEmY2Va3nHGd/Test?node-id=0%3A1" target="_blank">Figma file</a>.
+
+You have been asked to build out a code example block for Textlocal to use as part of a marketing campaign to promote its PHP API for sending SMS. The page uses the standard landing page template, and so the header, hero, and footer are provided pre-built. These contain examples of how we write HTML, and use Tailwind, and Alpine, so please review them before starting to write any code.
+
+Please add your code where you can see the `<!-- Code goes here -->` line. You do not need to make any admendments to the code already provided.
+
+We have provided the three code examples you will need. There are three; POST, GET, and Class. These are pre-marked up and should not be change. You will find them in the `partials/php` folder.
+
+The only things you need to build are the heading, subcopy, link to documents (just use `href="#"` for any links), buttons, and the logic to display each code snippet.
+
+In the html element, you will see one called `method: 'post'`. This is the AlpineJS key you will use for the button toggles. Please look at how we have built the country selector to get an understanding how this works. Alternatively, you can review the Alpine JS documentation with the tabs example.
+
+Please use version control. If you do not know how to use version control, please note that you do not when you return the example. Please do not push back up to the example. Create your own repo and provide a link to the test.
 
 ## The tools we use
 
 ### Statamic
 
-We use a CMS called Statamic. It simplifies creating front ends for websites, as it abstracts any PHP away from you. Instead you work with a templating language called Antlers. Don't worry about learning this too deeply.
+We use a CMS called Statamic. It simplifies creating front ends for websites, as it abstracts any PHP away from you. Instead you work with a templating language called Antlers.
 
-We've scaffolded out a basic site and page for you to work on. We've added data to the page for you to work with.
-
-Some of the site is already done so you can see how it works. The template has more details to guide you through how to work with it.
+Don't worry too much about this, as this test is focused 100 per cent on your knowledge of HTML, CSS, and JS.
 
 ### Tailwind CSS
 Tailwind CSS is a utility-first CSS framework. It’s goal is to solve two of the biggest problems of writing CSS.

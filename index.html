@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="//unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/atom-one-dark-reasonable.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/atom-one-dark-reasonable.min.css" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
-    <script src="//unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+    <script>src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=php&amp%3Bskin=sunburst"</script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+  
     <style>
       .font-sans{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}
       a, button { display:inline-flex; }
@@ -19,7 +21,7 @@
     <header class="flex-shrink-0">
       <nav class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto py-4 flex flex-col sm:flex-row justify-between items-center">
         <a href="/">
-          <img class="h-20 mb-4 sm:mb-0" src="/images/logo.svg" alt="imimobile's logo">
+          <img class="h-20 mb-4 sm:mb-0" src="./images/logo.svg" alt="imimobile's logo">
         </a>
         <ul class="flex text-sm items-center">
           <li class="mr-4">
@@ -35,7 +37,7 @@
       </nav>
     </header>
     <main class="flex-shrink-0 flex-grow">
-      <section class="bg-cover bg-center no-repeat py-20" style="background-image: url('/images/hero.jpg');">
+      <section class="bg-cover bg-center no-repeat py-20" style="background-image: url('./images/hero.jpg');">
         <div class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
           <h1 class="font-semibold text-4xl mb-4 text-white"><span x-show="country === 'gb' || country === 'ie'">Connect your application with our SMS API</span><span x-cloak x-show="country === 'es'">SMS API para una integraci&oacute;n total</span></span></h1>
           <div class="max-w-xl text-gray-300 leading-6 font-medium">
@@ -58,7 +60,84 @@
         </div>
       </section>
       <article class="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto py-10">
-        <!-- Code goes here -->
+        <div>
+          <h2 class="font-semibold text-2xl mb-4 text-black">Send SMS with our PHP API</h2>
+          <div class="text-gray-500 leading-6 font-medium">
+            <p class='mb-2'>Refer to the code below to see how easily you can integrate our SMS API with your own software, CRM application or website in a language you already use.</p>
+            <a class='href="#" cursor-pointer'>
+              <p class="flex items-center font-medium text-gray-500" href="#">
+                <span class="text-sm justify-center mr-1 leading-4">Read our full API documentation</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.33334 2.99999H3.00001C2.55798 2.99999 2.13406 3.17559 1.8215 3.48815C1.50894 3.80071 1.33334 4.22463 1.33334 4.66666V13C1.33334 13.442 1.50894 13.8659 1.8215 14.1785C2.13406 14.4911 2.55798 14.6667 3.00001 14.6667H11.3333C11.7754 14.6667 12.1993 14.4911 12.5119 14.1785C12.8244 13.8659 13 13.442 13 13V9.66666M9.66668 1.33333H14.6667M14.6667 1.33333V6.33333M14.6667 1.33333L6.33334 9.66666" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </p>
+            </a> 
+          </div>
+          <div class="mt-10" x-data="{ tab: 'tab1'}">
+            <ul class="flex mb-6 text-sm items-center">
+              <li class="mr-2">
+                <a 
+                class="rounded-full uppercase font-semibold py-2 px-4 text-black transition-colors ease-in-out duration-150 border-2 border-gray-300 cursor-pointer  mb-4 sm:mb-0"
+                :class="{'border-blue-500 text-blue-500 hover:border-blue-400 hover:text-blue-400' : tab === 'tab1'}" 
+                @click="
+                fetch('./partials/php/class.html')
+                  .then(response => response.text())
+                  .then(html => { $refs.tabSelector1.innerHTML = html })
+              "
+                href="#"
+                @click.prevent="tab = 'tab1'">
+                Post
+               </a>
+              </li>
+              <li class="mr-2">
+                <a 
+                class="rounded-full uppercase font-semibold py-2 px-4 text-black transition-colors ease-in-out duration-150 border-2 border-gray-300 cursor-pointer  mb-4 sm:mb-0"
+                :class="{'border-blue-500 text-blue-500 hover:border-blue-400 hover:text-blue-400' : tab === 'tab2'}" 
+                @click="
+                fetch('./partials/php/get.html')
+                  .then(response => response.text())
+                  .then(html => { $refs.tabSelector2.innerHTML = html })
+              "
+                href="#"
+                @click.prevent="tab = 'tab2'">
+                Get
+               </a>
+              </li>
+              <li class="mr-2">
+                <a 
+                class="rounded-full font-semibold py-2 px-4 text-black transition-colors ease-in-out duration-150 border-2 border-gray-300 cursor-pointer  mb-4 sm:mb-0"
+                :class="{'border-blue-500 text-blue-500 hover:border-blue-400 hover:text-blue-400' : tab === 'tab3'}" 
+                @click="
+                fetch('./partials/php/post.html')
+                  .then(response => response.text())
+                  .then(html => { $refs.tabSelector3.innerHTML = html })
+              "
+                href="#"
+                @click.prevent="tab = 'tab3'">
+                Class
+               </a>
+              </li>
+            </ul>
+            <div class="content">
+              <div 
+              x-show="tab === 'tab1'" >
+              <pre><code x-ref="tabSelector1" class="language-php px-6 py-8 rounded-lg">&lt;?php
+                // Account details
+                $apiKey = urlencode('Your apiKey');
+              </code></pre>
+              </div>
+              <div  
+              x-ref="tabSelector2"
+              x-show="tab === 'tab2'" >
+                test2
+              </div>
+              <div 
+              x-ref="tabSelector3"
+              x-show="tab === 'tab3'" >
+              test3
+              </div>
+            </div>
+        </div>
       </article>
     </main>
     <footer class="flex-shrink-0 py-8 bg-gray-200 text-xs">
@@ -69,16 +148,16 @@
         </div>
         <button
           @mouseenter.once="
-            fetch('/partials/country-selector.html')
+            fetch('./partials/country-selector.html')
               .then(response => response.text())
               .then(html => { $refs.countrySelector.innerHTML = html })
           "
           @click="countrySelectorOpen = true"
           class="focus:outline-none focus:border-blue-500 flex border-2 rounded-full border-gray-300 py-2 px-4 bg-white mt-4 sm:mt-0"
         >
-          <img x-show="country === 'gb'" class="h-6 w-6 rounded-full" src="/images/flags/gb.svg" />
-          <img x-cloak x-show="country === 'ie'" class="h-6 w-6 rounded-full" src="/images/flags/ie.svg" />
-          <img x-cloak x-show="country === 'es'" class="h-6 w-6 rounded-full" src="/images/flags/es.svg" />          
+          <img x-show="country === 'gb'" class="h-6 w-6 rounded-full" src="./images/flags/gb.svg" />
+          <img x-cloak x-show="country === 'ie'" class="h-6 w-6 rounded-full" src="./images/flags/ie.svg" />
+          <img x-cloak x-show="country === 'es'" class="h-6 w-6 rounded-full" src="./images/flags/es.svg" />          
           <span class="ml-2 leading-6 font-semibold text-gray-700"><span x-show="country === 'gb' || country === 'ie'">Country selector</span><span x-cloak x-show="country === 'es'">Selector de pais</span></span>
         </button>
         <div
